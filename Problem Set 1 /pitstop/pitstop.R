@@ -4,7 +4,7 @@ library(readr)
 # Prompt user for the CSV file name
 file_name <- readline(prompt = "Enter the CSV file name: ")
 
-# Read the CSV file
+# Read CSV file
 data <- read_csv(file_name)
 
 # Calculate the required information
