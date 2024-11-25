@@ -1,5 +1,18 @@
-bus <- read.csv("bus.csv")
-View(bus)
+bus <- read.csv("/Users/sarthakbwj/Documents/GitHub/Harvard-CS50-R-Problems/Problem Set 1/ontime/bus.csv")
+rail <- read.csv("/Users/sarthakbwj/Documents/GitHub/Harvard-CS50-R-Problems/Problem Set 1/ontime/rail.csv")
 
-rail <- read.csv("rail.csv")
-View(rail)
+# Define valid routes
+valid_routes <- c(bus$route, rail$route)
+
+repeat {
+  # Prompt the user for a route
+  route <- readline(prompt = "Please enter the route you intend to take: ")
+  
+  # Check if the route is valid
+  if (route %in% valid_routes) {
+    cat("You have selected a valid route:", route, "\n")
+    break  # Exit the loop if a valid route is entered
+  } else {
+    cat("Invalid route. Please enter a valid route from the following options:", paste(valid_routes, collapse = ", "), "\n")
+  }
+}
