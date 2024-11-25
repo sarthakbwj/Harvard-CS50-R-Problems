@@ -13,6 +13,6 @@ repeat {
     cat("You have selected a valid route:", route, "\n")
     break  # Exit the loop if a valid route is entered
   } else {
-    cat("Invalid route. Please enter a valid route from the following options:", paste(valid_routes, collapse = ", "), "\n")
+    message("Invalid route. Please enter a valid route.")
   }
 }
